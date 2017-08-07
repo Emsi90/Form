@@ -11,7 +11,51 @@
 
 <body>
     <div class="main">
-        
+        <h1>Clean Simple Form</h1>
+        <hr>
+        <form action="#">
+
+        	<div class="name">
+                <div class="fname">
+                    <label for="fname">Imię:</label>
+                    <input type="text" name="fname">
+                </div>
+                <div class="lname">
+                    <label for="lname">Nazwisko:</label>
+                    <input type="text" namdiv="lname">
+                </div>    
+            </div>
+
+            <label for="adres">Adres:</label>
+            <input type="text" name="adres">
+
+            <label for="postal">Kod pocztowy:</label>
+            <input type="text" name="postal">
+
+            <label for="phone">Numer telefonu:</label>
+            <input type="text" name="phone">
+
+            <label for="email">Adres e-mail:</label>
+            <input type="email" name="email">
+
+            <label for="date">Wybierz termin:</label>
+            <input type="date" name="date">
+
+            <label for="topic">Temat:</label>
+            <select name="topic">
+                <option value="1st">Pierwszy temat</option>
+                <option value="2st">Drugi temat</option>
+                <option value="3st">Trzeci temat</option>
+            </select>
+            
+            <label for="textarea">Wiadomość:</label>
+            <textarea name="textarea" placeholder="Treść wiadomości..."></textarea>
+            
+            <div class="buttons">
+                <button class="clear">Wyczyść</button>
+                <button class="send" type="submit">Wyślij</button>
+            </div>
+        </form>
     </div>
 </body>
 
