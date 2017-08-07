@@ -58,19 +58,49 @@ textarea {
 	height: 100px;
 	font-size: 1rem;
 }
-input:focus, select:focus, textarea:focus  {
+
+/*input:focus, select:focus, textarea:focus  {
 	background: #FAFCFE;
-}
+}*/
 /*input[name="adres"], input[name="email"], select {
 	width: 80%;
 }*/
 input[name="postal"], input[name="date"] {
 	width: 30%;
 }
-input[name="phone"] {
-	width: 40%;
+input[type="date"] {
+	font-family: 'Open Sans', arial, sans-serif;
+	font-size: 1rem;
+	text-transform: uppercase;
+	padding-right: 0;
+	background-image: url('../img/calendar.png');
+	background-position: 97% 50%;
+	background-repeat: no-repeat;
 }
-
+input[type="date"]:focus {
+	background: #FAFCFE;
+	background-image: url('../img/calendar.png');
+	background-position: 97% 50%;
+	background-repeat: no-repeat;
+}
+input[type="date"]::-webkit-inner-spin-button {
+  	display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+	width: 15px;
+ 	opacity: 0;
+}
+input[name="phone"] {
+	background-image: url('../img/calendar.png');
+	background-position: 97% 50%;
+	background-repeat: no-repeat;
+}
+input[name="phone"]:focus {
+	background: #FAFCFE;
+	background-image: url('../img/calendar.png');
+	background-position: 97% 50%;
+	background-repeat: no-repeat;
+}
 
 .name {
 	display: flex;
