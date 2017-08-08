@@ -17,15 +17,15 @@ body {
 }
 h1 {
 	margin-top: 50px;
-	color: #BCBCBC;
+	color: #56B8FE;
 	font-size: 2rem;
 }
 hr {
-	margin-top: 10px;
-	width: 600px;
+	margin-top: 20px;
+	width: 100px;
 	height: 1px;
 	border: none;
-	background: #BCBCBC;
+	background: #F4F4F4;
 }
 form {
 	display: flex;
@@ -40,6 +40,7 @@ label {
 	padding-bottom: 10px;
 }
 input, select, textarea {
+	position: relative;
 	height: 40px;
 	font-size: 1rem;
 	padding: 0 15px;
@@ -47,10 +48,20 @@ input, select, textarea {
 	border: 1px solid #E0E0E0;
 	margin-bottom: 20px;
 }
-select {
-	padding: 0 10px;
+input:focus, select:focus, textarea:focus  {
+	background: #FAFCFE;
 }
-
+input, input:focus, select, select:focus {
+	background-position: 97% 50%;
+	background-repeat: no-repeat;
+}
+select, select:focus {
+	padding: 0 10px;
+	appearance:none;
+	-moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    background-image: url('../img/down-arrow.png');
+}
 textarea {
 	color: #3A3A3A;
 	font-family: 'Open Sans', arial, sans-serif;
@@ -59,14 +70,25 @@ textarea {
 	font-size: 1rem;
 }
 
-/*input:focus, select:focus, textarea:focus  {
-	background: #FAFCFE;
-}*/
 /*input[name="adres"], input[name="email"], select {
 	width: 80%;
 }*/
 input[name="postal"], input[name="date"] {
 	width: 30%;
+}
+input[name="fname"], input[name="fname"]:focus, 
+input[name="lname"], input[name="lname"]:focus {
+	background-image: url('../img/id.png');
+}
+input[name="address"], input[name="address"]:focus, 
+input[name="postal"], input[name="postal"]:focus {
+	background-image: url('../img/address.png');
+}
+input[name="phone"], input[name="phone"]:focus {
+	background-image: url('../img/phone.png');
+}
+input[name="email"], input[name="email"]:focus {
+	background-image: url('../img/email.png');
 }
 input[type="date"] {
 	font-family: 'Open Sans', arial, sans-serif;
@@ -74,14 +96,10 @@ input[type="date"] {
 	text-transform: uppercase;
 	padding-right: 0;
 	background-image: url('../img/calendar.png');
-	background-position: 97% 50%;
-	background-repeat: no-repeat;
 }
+
 input[type="date"]:focus {
-	background: #FAFCFE;
 	background-image: url('../img/calendar.png');
-	background-position: 97% 50%;
-	background-repeat: no-repeat;
 }
 input[type="date"]::-webkit-inner-spin-button {
   	display: none;
@@ -89,17 +107,6 @@ input[type="date"]::-webkit-inner-spin-button {
 input[type="date"]::-webkit-calendar-picker-indicator {
 	width: 15px;
  	opacity: 0;
-}
-input[name="phone"] {
-	background-image: url('../img/calendar.png');
-	background-position: 97% 50%;
-	background-repeat: no-repeat;
-}
-input[name="phone"]:focus {
-	background: #FAFCFE;
-	background-image: url('../img/calendar.png');
-	background-position: 97% 50%;
-	background-repeat: no-repeat;
 }
 
 .name {
@@ -114,6 +121,7 @@ input[name="phone"]:focus {
 	flex-direction: column;
 }
 .fname {
+	position: relative;
 	margin-right: 15px;
 }
 .buttons {
@@ -141,4 +149,21 @@ input[name="phone"]:focus {
 }
 .send:hover {
 	background: #66D934;
+}
+.invalid {
+	position: relative;
+	border: 1px solid #ED5D58;
+}
+.fname::after {
+	color: #ED5D58;
+	padding: 0 5px 0 22px;
+	content: "Podaj swoje imię";
+	position: absolute;
+	right: 5px;
+	bottom: 15px;
+	font-size: 0.8rem;
+	background-color: #FFFFFF;
+	background-image: url('../img/danger.png');
+	background-position: 2px 50%;
+	background-repeat: no-repeat;
 }

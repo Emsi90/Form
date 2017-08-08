@@ -18,41 +18,41 @@
         	<div class="name">
                 <div class="fname">
                     <label for="fname">Imię:</label>
-                    <input type="text" name="fname">
+                    <input type="text" name="fname" id="fname" class="invalid" required>
                 </div>
                 <div class="lname">
                     <label for="lname">Nazwisko:</label>
-                    <input type="text" namdiv="lname">
+                    <input type="text" name="lname" id="lname" required>
                 </div>    
             </div>
 
-            <label for="adres">Adres:</label>
-            <input type="text" name="adres">
+            <label for="address">Adres:</label>
+            <input type="text" name="address" id="address" required>
 
             <label for="postal">Kod pocztowy:</label>
-            <input type="text" name="postal">
+            <input type="text" name="postal" id="postal" required>
 
             <label for="phone">Numer telefonu:</label>
-            <input type="text" name="phone">
+            <input type="text" name="phone" id="phone" required>
 
             <label for="email">Adres e-mail:</label>
-            <input type="email" name="email">
+            <input type="email" name="email" id="email" required>
 
             <label for="date">Wybierz termin:</label>
-            <input type="date" name="date">
+            <input type="date" name="date" id="date" required>
 
             <label for="topic">Temat:</label>
-            <select name="topic">
+            <select name="topic" id="topic" required>
                 <option value="1st">Pierwszy temat</option>
                 <option value="2st">Drugi temat</option>
                 <option value="3st">Trzeci temat</option>
             </select>
             
             <label for="textarea">Wiadomość:</label>
-            <textarea name="textarea" placeholder="Treść wiadomości..."></textarea>
+            <textarea name="textarea" id="textarea" placeholder="Treść wiadomości..." required></textarea>
             
             <div class="buttons">
-                <button class="clear">Wyczyść</button>
+                <button class="clear" type="reset">Wyczyść</button>
                 <button class="send" type="submit">Wyślij</button>
             </div>
         </form>
