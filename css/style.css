@@ -33,6 +33,7 @@ form {
 	justify-content: center;
 	width: 600px;
 	max-width: 600px;
+    transition: all .3s;
 }
 label {
 	color: #494949;
@@ -163,9 +164,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .valid {
 	border: 1px solid #96E674;
+    transition: all .7s;
 }
 .invalid {
 	border: 1px solid #ED5D58;
+    transition: all .3s;
 }
 .invalid-text {
 	color: #ED5D58;
@@ -179,7 +182,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	background-position: 2px 50%;
 	background-repeat: no-repeat;
     z-index: 10;
+    transition: all .1s;
 }
 .hide {
     display: none;
+}
+.success {
+    margin-top: 200px;
+    font-size: 1.2rem;
+    color: #56B8FE;
 }

@@ -5,17 +5,20 @@
         this.form = form;
         this.form.noValidate = true;
         this.fields = document.querySelectorAll('[required]');
-        this.errors = [];
+        this.errors = true;
         this.invalidText = document.querySelectorAll('.invalid-text');
-//        console.log(this.invalidText[0]);
+        this.success = document.querySelector('.success');
+        
         if(!this.fields.length) return;
         
         this.form.onsubmit = function(e) {
             e.preventDefault();
             var formValid = this.validate();
-            
+            console.log(formValid);
             if(formValid) {
                 this.form.submit();
+                this.form.classList.add('hide');
+                this.success.classList.remove('hide');
             } else {
                 return false;
             }
@@ -31,7 +34,7 @@ Validator.prototype.validate = function() {
         
     }
     
-    if(!this.errors.length) {
+    if(this.errors) {
         return true;
     } else {
         return false;
@@ -45,8 +48,10 @@ Validator.prototype.validateField = function(field, invalidText) {
     
     if(fieldValid) {
         this.markAsValid(field, invalidText);
+        this.errors = true;
     } else {
-        this.errors.push(fieldValid);
+        this.errors = false;
+        console.log(this.errors);
         this.markAsInvalid(field, invalidText);
     }
     
