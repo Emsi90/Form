@@ -39,8 +39,12 @@ label {
 	font-size: 0.8rem;
 	padding-bottom: 10px;
 }
+.row {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 input, select, textarea {
-	position: relative;
 	height: 40px;
 	font-size: 1rem;
 	padding: 0 15px;
@@ -73,9 +77,11 @@ textarea {
 /*input[name="adres"], input[name="email"], select {
 	width: 80%;
 }*/
+/*
 input[name="postal"], input[name="date"] {
-	width: 30%;
+	width: 40%;
 }
+*/
 input[name="fname"], input[name="fname"]:focus, 
 input[name="lname"], input[name="lname"]:focus {
 	background-image: url('../img/id.png');
@@ -124,6 +130,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	position: relative;
 	margin-right: 15px;
 }
+/*
+.postal {
+    width: 40%;
+}
+*/
 .buttons {
 	display: flex;
 	align-self: center;
@@ -150,20 +161,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .send:hover {
 	background: #66D934;
 }
+.valid {
+	border: 1px solid #96E674;
+}
 .invalid {
-	position: relative;
 	border: 1px solid #ED5D58;
 }
-.fname::after {
+.invalid-text {
 	color: #ED5D58;
-	padding: 0 5px 0 22px;
-	content: "Podaj swoje imię";
+	padding: 5px 5px 5px 22px;
 	position: absolute;
 	right: 5px;
-	bottom: 15px;
+	bottom: 10px;
 	font-size: 0.8rem;
 	background-color: #FFFFFF;
 	background-image: url('../img/danger.png');
 	background-position: 2px 50%;
 	background-repeat: no-repeat;
+    z-index: 10;
 }

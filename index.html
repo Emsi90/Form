@@ -15,42 +15,65 @@
         <hr>
         <form action="#">
 
-        	<div class="name">
-                <div class="fname">
+            <div class="name">
+                <div class="fname row">
                     <label for="fname">Imię:</label>
                     <input type="text" name="fname" id="fname" class="invalid" required>
+                    <div class="invalid-text">Podaj swoje imię!</div>
                 </div>
-                <div class="lname">
+                <div class="lname row">
                     <label for="lname">Nazwisko:</label>
-                    <input type="text" name="lname" id="lname" required>
-                </div>    
+                    <input type="text" name="lname" id="lname" class="valid" required>
+                    <div class="invalid-text">Podaj swoje nazwisko!</div>
+                </div>
             </div>
 
-            <label for="address">Adres:</label>
-            <input type="text" name="address" id="address" required>
+            <div class="row">
+                <label for="address">Adres:</label>
+                <input type="text" name="address" id="address" class="invalid" required>
+                <div class="invalid-text">Podaj poprawny adres!</div>
+            </div>
 
-            <label for="postal">Kod pocztowy:</label>
-            <input type="text" name="postal" id="postal" required>
+            <div class="postal row">
+                <label for="postal">Kod pocztowy:</label>
+                <input type="text" name="postal" id="postal" required>
+                <div class="invalid-text">Podaj poprawny kod pocztowy! (XX-XXX)</div>
+            </div>
 
-            <label for="phone">Numer telefonu:</label>
-            <input type="text" name="phone" id="phone" required>
+            <div class="row">
+                <label for="phone">Numer telefonu:</label>
+                <input type="text" name="phone" id="phone" required>
+                <div class="invalid-text">Podaj poprawny numer telefonu! (np. XXX-XXX-XXX)</div>
+            </div>
 
-            <label for="email">Adres e-mail:</label>
-            <input type="email" name="email" id="email" required>
+            <div class="row">
+                <label for="email">Adres e-mail:</label>
+                <input type="email" name="email" id="email" required>
+                <div class="invalid-text">Podaj poprawny adres e-mail! (np. xyz@domena.pl)</div>
+            </div>
 
-            <label for="date">Wybierz termin:</label>
-            <input type="date" name="date" id="date" required>
+            <div class="row">
+                <label for="date">Wybierz termin:</label>
+                <input type="date" name="date" id="date" required>
+                <div class="invalid-text">Podaj termin wizyty!</div>
+            </div>
 
-            <label for="topic">Temat:</label>
-            <select name="topic" id="topic" required>
-                <option value="1st">Pierwszy temat</option>
-                <option value="2st">Drugi temat</option>
-                <option value="3st">Trzeci temat</option>
-            </select>
-            
-            <label for="textarea">Wiadomość:</label>
-            <textarea name="textarea" id="textarea" placeholder="Treść wiadomości..." required></textarea>
-            
+            <div class="row">
+                <label for="topic">Temat:</label>
+                <select name="topic" id="topic" required>
+                    <option value="1st">Pierwszy temat</option>
+                    <option value="2st">Drugi temat</option>
+                    <option value="3st">Trzeci temat</option>
+                </select>
+                <div class="invalid-text">Wybierz temat!</div>
+            </div>
+
+            <div class="row">
+                <label for="textarea">Wiadomość:</label>
+                <textarea name="textarea" id="textarea" placeholder="Treść wiadomości..." required></textarea>
+                <div class="invalid-text">Wpisz treśc wiadomości! (min. 10 znaków)</div>
+            </div>
+
             <div class="buttons">
                 <button class="clear" type="reset">Wyczyść</button>
                 <button class="send" type="submit">Wyślij</button>
