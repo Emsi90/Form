@@ -16,9 +16,9 @@
             var formValid = this.validate();
             console.log(formValid);
             if(formValid) {
-                this.form.submit();
                 this.form.classList.add('hide');
                 this.success.classList.remove('hide');
+                this.form.submit();
             } else {
                 return false;
             }
@@ -51,7 +51,6 @@ Validator.prototype.validateField = function(field, invalidText) {
         this.errors = true;
     } else {
         this.errors = false;
-        console.log(this.errors);
         this.markAsInvalid(field, invalidText);
     }
     
