@@ -1,6 +1,6 @@
 <?php
 
-$fnameError = $fnameError = $fnameError = "";
+$fnameError = $lnameError = $emailError = "";
 
 $fname = $_POST['fname'] . "\r\n";
 $lname = $_POST['lname'] . "\r\n";
@@ -37,29 +37,34 @@ $msg.= "$message
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    if (empty($_POST["fname"])) {
+    if (empty($_POST['fname'])) {
         $fnameError = "error";
     } else {
         $fname = test_input($_POST["fname"]);
     }
-    if (empty($_POST["lname"])) {
+    if (empty($_POST['lname'])) {
         $lnameError = "error";
     } else {
         $lname = test_input($_POST["lname"]);
     }
-    if (empty($_POST["email"])) {
+    if (empty($_POST['email'])) {
         $emailError = "error";
     } else {
         $email = test_input($_POST["email"]);
     }
     
-    if($fnameError = "" and $fnameError = "" and $fnameError = "") {
-        $to = 'sztuka-18@o2.pl';
+    if($fnameError == "" and $lnameError == "" and $emailError == "") {
+        
+        $flname = "$fname
+        ";
+        $flname.= "$lname
+        ";
+        $to = 'marcinchojnacki00@gmail.com';
         $subject = 'Wiadomośc z formularza!';
-//        mail($to, $fname, $lname, $email, $subject)
-        if(mail($to, $fname, $lname, $email, $subject)){
-            $success = "Formularz wysłany, dziekujemy za wiadomość!";
-        }
+        mail($to, $flname, $email, $subject, $msg);
+//        if(mail($to, $flname, $email, $subject, $msg)){
+//            $success = "Formularz wysłany, dziekujemy za wiadomość!";
+//        }
     }
 }
 
