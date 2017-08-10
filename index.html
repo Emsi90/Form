@@ -13,8 +13,7 @@
     <div class="main">
         <h1>Clean Simple Form</h1>
         <hr>
-        <?php include('send.php'); ?>
-        <form id="form" class="form" action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+        <form id="form" class="form" action="mail.php" method="post">
 
             <div class="name">
                 <div class="fname row">
@@ -82,7 +81,7 @@
             </div>
         </form>
         <div class="success hide">
-            <h3>Gratulacje udało Ci sie wysłać do nas e-mail!</h3>
+            <h3><?= $success ?></h3>
         </div>
     </div>
     <script src="js/scripts.js"></script>

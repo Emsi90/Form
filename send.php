@@ -37,6 +37,6 @@ $msg.= "$message
 ";
 
 mail($to, trim($fname), $lname, $email, $headers);
-//header('Location: sukces.html');
+header('Location: sukces.html');
 
 ?>
