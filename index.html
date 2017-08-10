@@ -13,7 +13,8 @@
     <div class="main">
         <h1>Clean Simple Form</h1>
         <hr>
-        <form id="form" class="form" action="#send">
+        <?php include('send.php'); ?>
+        <form id="form" class="form" action="<?= $_SERVER['PHP SELF']; ?>">
 
             <div class="name">
                 <div class="fname row">
