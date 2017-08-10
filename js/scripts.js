@@ -5,19 +5,25 @@
         this.form = form;
         this.form.noValidate = true;
         this.fields = document.querySelectorAll('[required]');
+        this.fieldsStorage = document.querySelectorAll('input[name]:not([type="submit"])');
+        this.formID = this.form.getAttribute('id');
+        this.fieldsValues = {};
         this.errors = [];
         this.invalidText = document.querySelectorAll('.invalid-text');
 
         this.success = document.querySelector('.success');
+        
+        this.addSavingToFields();
+        this.loadFieldsValues();
         
         if(!this.fields.length) return;
         
         this.form.onsubmit = function(e) {
             e.preventDefault();
             var formValid = this.validate();
-            console.log(formValid);
             if(formValid) {
-
+                
+                this.clearLocalStorage();
                 this.form.submit();
 //                this.form.classList.add('hide');
 //                this.success.classList.remove('hide');
@@ -74,6 +80,55 @@ Validator.prototype.markAsInvalid = function(field, invalidText) {
     field.classList.add('invalid');
     
     invalidText.classList.remove('hide');
+    
+};
+
+Validator.prototype.addSavingToFields = function() {
+    
+    for(var i = 0; i < this.fields.length; i++) {
+        
+        this.fields[i].onchange = this.saveField.bind(this);
+        
+    }
+    
+};
+
+Validator.prototype.saveField = function(e) {
+  
+    var that = e.target;
+    
+
+    this.fieldsValues[that.getAttribute('name')] = that.value;
+    this.saveToLocalStorage();
+
+    
+};
+
+Validator.prototype.saveToLocalStorage = function() {
+  
+    window.localStorage.setItem(this.formID, JSON.stringify(this.fieldsValues));
+    
+};
+
+Validator.prototype.loadFieldsValues = function() {
+  
+    var saveFields = window.localStorage[this.formID];
+    console.log(saveFields);
+    if(saveFields) {
+        
+        saveFields = JSON.parse(saveFields);
+        
+        for(var key in saveFields) {
+            this.form.querySelector('[name="' + key + '"]').value = saveFields[key];
+        }
+        
+    }
+    
+};
+    
+Validator.prototype.clearLocalStorage = function() {
+    
+    window.localStorage.removeItem(this.formID);
     
 };
     
