@@ -36,13 +36,13 @@
 
             <div class="postal row">
                 <label for="postal">Kod pocztowy:</label>
-                <input type="text" name="postal" id="postal" required>
+                <input type="text" name="postal" id="postal" pattern="\d{2}[-]\d{3}" required>
                 <div class="invalid-text hide">Podaj poprawny kod pocztowy! (XX-XXX)</div>
             </div>
 
             <div class="row">
                 <label for="phone">Numer telefonu:</label>
-                <input type="text" name="phone" id="phone" required>
+                <input type="text" name="phone" id="phone" pattern="\d{3}[-]\d{3}[-]\d{3}" required>
                 <div class="invalid-text hide">Podaj poprawny numer telefonu! (np. XXX-XXX-XXX)</div>
             </div>
 
