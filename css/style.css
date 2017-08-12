@@ -16,6 +16,7 @@ body {
     width: 100%;
 }
 h1 {
+    text-align: center;
 	margin-top: 50px;
 	color: #56B8FE;
 	font-size: 2rem;
@@ -191,4 +192,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 200px;
     font-size: 1.2rem;
     color: #56B8FE;
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 95%;
+    }
+    .name {
+        flex-direction: column;
+    }
+    .fname {
+        margin-right: 0;
+    }
+    .buttons {
+        justify-content: center;
+        width: 95%;
+    }
 }
