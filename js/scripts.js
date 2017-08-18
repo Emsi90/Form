@@ -24,9 +24,8 @@
             if(formValid) {
                 
                 this.clearLocalStorage();
-                this.form.submit();
-//                this.form.classList.add('hide');
-//                this.success.classList.remove('hide');
+//                this.form.submit();
+                this.sendData();
                 
             } else {
                 return false;
@@ -130,6 +129,25 @@ Validator.prototype.clearLocalStorage = function() {
     
     window.localStorage.removeItem(this.formID);
     
+};
+
+Validator.prototype.sendData = function() {
+    
+    var xhr = new XMLHttpRequest();
+    var data = new FormData(this.form);
+
+    xhr.open('POST', 'mail.php', true);
+
+    xhr.onreadystatechange = function(e) {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+            this.form.classList.add('hide');
+            this.success.classList.remove('hide');
+        }
+    }.bind(this);
+
+    console.log(data);
+    xhr.send(data);
+                    
 };
     
 var validator1 = new Validator(document.querySelector('.form'));
