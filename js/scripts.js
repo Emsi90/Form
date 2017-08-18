@@ -142,10 +142,11 @@ Validator.prototype.sendData = function() {
         if(xhr.readyState === 4 && xhr.status === 200) {
             this.form.classList.add('hide');
             this.success.classList.remove('hide');
+//            console.log(data.response);
         }
     }.bind(this);
 
-    console.log(data);
+//    console.log(data);
     xhr.send(data);
                     
 };
